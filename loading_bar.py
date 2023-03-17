@@ -15,11 +15,13 @@ def loading_str(i:'int', t:'int', verbose = False, text = 'iteration') -> 'str':
 def loading(i:'int', t:'int', verbose = False, text = 'iteration') -> 'str':
     '''Prints a loading bar for iteration i out of t'''
     print(loading_str(i,t,verbose,text), end = '\r')
+    if i == t:
+        print()
     
 class LoadingBar:
     def __init__(self, t, verbose = False, text = 'iteration'):
         self.t = t
-        self.i = 0
+        self.i = 1
         self.verbose = verbose
         self.text = text
         
